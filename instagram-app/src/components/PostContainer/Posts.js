@@ -1,6 +1,8 @@
 import React from 'react';
 import './Posts.css';
 import Comments from '../CommentSection/Comments';
+import Coms from '../CommentSection/Coms/Coms';
+
 
 const Posts = props => {
     return (

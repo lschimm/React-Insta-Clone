@@ -33,15 +33,16 @@ export default class SearchBar extends React.Component {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">Instaclone</NavbarBrand>
+            <NavbarBrand href="/">Cam | Instaclone</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-              <input className="input"
+            <input className="input"
                 type="text"
                 name="task"
                 placeholder="Search"
               />
+              <Nav className="ml-auto" navbar>
+
                 <NavItem>
                   <NavLink href="/components/">Nav</NavLink>
                 </NavItem>

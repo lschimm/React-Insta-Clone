@@ -10,14 +10,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      commentPosts: dummyData,
+      commentPosts: [],
 
       id: '',
       username: '',
       thumbnailUrl: '',
       likes: 0 ,
       timestamp: 0
-    }
+    };
+  }
+  
+  componentDidMount() {
+    this.setState({
+      commentPosts: dummyData
+    });
   }
   
   render(){
