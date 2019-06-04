@@ -15,7 +15,7 @@ class App extends Component {
       id: '',
       username: '',
       thumbnailUrl: '',
-      likes: 0,
+      likes: 0 ,
       timestamp: 0
     }
   }

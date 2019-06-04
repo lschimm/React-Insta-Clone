@@ -13,8 +13,13 @@ const Posts = props => {
                     />
                     </div>
                 ))}
+                {}
             </div>
         )
     }
 
 export default Posts;
+
+// {props.thePosts.comments.map(comm => (
+//     <div></div>
+// ))
