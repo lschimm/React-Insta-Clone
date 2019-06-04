@@ -37,12 +37,22 @@ import './Comments.css';
 // };
 
 class Comments extends Component{
-    // constructor() {
-    //     super();
-    //     this.state = { 
-    //         thePosts: this.props.thePosts
-    //     }
-    // }
+    constructor() {
+        super();
+        this.state = { 
+            thePosts: this.props
+        }
+    }
+
+    addNewComment = (event, index) => {
+        event.preventDefault();
+
+        const newComment = {
+            id: this.state.id,
+            username: this.state.username,
+            text: this.state.text
+        }
+    }
 
     render(){
     return(

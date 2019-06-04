@@ -13,6 +13,13 @@ const Posts = props => {
                     thePosts = {post}
                     key= {post.id}
                     />
+                    <form className="comm-form">
+                        <input
+                            type= "Add a comment..." 
+                            name= "com"
+                            placeholder="Add a comment..."
+                        />
+                    </form>
                     </div>
                 ))}
                 {}
