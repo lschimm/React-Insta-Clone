@@ -4,10 +4,17 @@ import Comments from '../CommentSection/Comments';
 
 const Posts = props => {
     return (
-        <div className="posts">
-            <h1>Comming from posts</h1>
-        </div>
-    )
-}
+        <div className="someposts">
+            {props.thePosts.map(post => (
+                <div>
+                    <Comments 
+                    thePosts = {post}
+                    key= {post.id}
+                    />
+                    </div>
+                ))}
+            </div>
+        )
+    }
 
 export default Posts;

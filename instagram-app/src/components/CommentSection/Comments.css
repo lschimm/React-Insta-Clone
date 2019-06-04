@@ -1,0 +1,9 @@
+.comments {
+    border: 1px solid red;
+}
+
+.thumbnail{
+    width: 25px;
+    height: auto;
+    border-radius: 50%;
+}
