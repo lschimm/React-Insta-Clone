@@ -10,7 +10,6 @@ const Coms = props => {
             <p className="comment-text">
             {props.comm.text}
             </p>
-            {/* props.thePosts.comments && props.thePosts.username.map(e => <p>{e.username}</p> */}
         </div>
     )
 }

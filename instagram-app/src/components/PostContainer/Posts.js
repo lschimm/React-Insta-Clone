@@ -2,6 +2,7 @@ import React from 'react';
 import './Posts.css';
 import Comments from '../CommentSection/Comments';
 import Coms from '../CommentSection/Coms/Coms';
+import PropTypes from 'prop-types';
 
 
 const Posts = props => {
@@ -13,19 +14,22 @@ const Posts = props => {
                     thePosts = {post}
                     key= {post.id}
                     />
-                    {/* <form className="comm-form">
-                        <input
-                            type= "Add a comment..." 
-                            name= "com"
-                            placeholder="Add a comment..."
-                        />
-                    </form> */}
                     </div>
                 ))}
                 {}
             </div>
         )
     }
+
+Posts.propTypes = {
+    thePosts: PropTypes.shape ({
+        thePosts: PropTypes.string.isRequired,
+        key: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        //recheck these things
+    })
+}
+
 
 export default Posts;
 
