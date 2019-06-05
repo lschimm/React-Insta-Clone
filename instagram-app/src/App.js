@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      commentPosts: [],
+      data: [],
 
       id: '',
       username: '',
@@ -22,7 +22,7 @@ class App extends Component {
   
   componentDidMount() {
     this.setState({
-      commentPosts: dummyData
+      data: dummyData
     });
   }
   
@@ -31,7 +31,7 @@ class App extends Component {
         <div className="App">
           <SearchBar />
           <Posts 
-          thePosts= {this.state.commentPosts}
+          thePosts= {this.state.data}
           />
           <h2>---</h2>
         </div>

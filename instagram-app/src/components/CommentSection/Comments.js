@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Coms from './Coms/Coms';
+import { FaReact } from 'react-icons/fa'
+
 import './Comments.css';
 
 
