@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Login extends React.Component {
-    toggle = event => {
+    toggleEvent = event => {
         event.preventDefault();
         if (localStorage.getItem("loggedIn")) {
             localStorage.removeItem("LoggedIn");
@@ -15,7 +15,7 @@ class Login extends React.Component {
             <div>
                 <input placeholder="Username" type="text" />
                 <input placeholder="Password" type="text" />
-                <button onClick={this.toggle}>Login</button>
+                <button onClick={this.toggleEvent}>Login</button>
             </div>
         )
     }

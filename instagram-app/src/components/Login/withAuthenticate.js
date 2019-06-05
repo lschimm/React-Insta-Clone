@@ -1,4 +1,6 @@
 import React from 'react';
+import Login from './Login';
+import PostPage from './PostPage';
 
 const withAuthenticate = PostPage => LoginPage => 
 class extends React.Component {
@@ -10,17 +12,23 @@ class extends React.Component {
     }
 
     componentDidMount() {
-        this.setState ({
-            LoggedIn: true
-        })
+        if (localStorage.getItem("LoggedIn")) {
+            this.setState({
+                LoggedIn: true
+            });
+        } else {
+            this.setState({
+                LoggedIn: false
+            })
+        }
     }
     render() {
-        if(localStorage.getItem("LoggedIn")) {
-            return <PostPage />;
+        if (this.state.LoggedIn) {
+            return <PostPage />
         } else {
-            return <LoginPage />;
+            return <LoginPage />
         }
     }
 }
 
-export defualt withAuthenticate;
+export default withAuthenticate;
