@@ -37,22 +37,53 @@ import './Comments.css';
 // };
 
 class Comments extends Component{
-    constructor() {
+    constructor(props) {
         super();
         this.state = { 
-            thePosts: this.props
+            thePosts: props.thePosts.comments,
+
+            id: 0,
+            username: "Leilani",
+            text: ""
         }
     }
+
 
     addNewComment = (event, index) => {
         event.preventDefault();
 
+        // index = this.state.thePosts.comments.length();
+
         const newComment = {
-            id: this.state.id,
+            id: index,
             username: this.state.username,
             text: this.state.text
-        }
+        };
+        // creating variable 
+        // assigning an object to it
+        // key and the value in object references to state
+
+        this.setState({
+            thePosts: [...this.state.thePosts, newComment],
+            id: 0,
+            username: "",
+            text: ""
+        })
+
     }
+
+    changeHandler = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    // this.setState({
+    //     comments: [...this.state.comments, newComment], 
+    //     id: '',
+    //     username: '',
+    //     text: '',
+    // })
 
     render(){
     return(
@@ -71,15 +102,25 @@ class Comments extends Component{
             <div className="date">
             <p>{this.props.thePosts.timestamp}</p>
             </div>
-                {this.props.thePosts.comments.map(each => {
+                {this.state.thePosts.map(each => {
                     return (
                     <div>
                         <Coms 
                             comm = {each}
-                            key = {each.id}
+                            // key = {each.id}
                         />
                     </div>
                 )})}
+                
+                <form className="comm-form" onSubmit={this.addNewComment}>
+                    <input
+                        type= "text" 
+                        name= "text"
+                        placeholder="Add a comment..."
+                        value={this.state.text}
+                        onChange={this.changeHandler}
+                    />
+                </form>
 
         </div>
     )
