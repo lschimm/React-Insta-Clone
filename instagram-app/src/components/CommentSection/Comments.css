@@ -37,7 +37,13 @@
     margin-left: 15px;
 }
 
+.usernames {
+    font-weight: bold;
+}
 
+.comment-text {
+    margin-left: 5px;
+}
 
 .button {
     background-color: rgba(75, 156, 75, 0.568);

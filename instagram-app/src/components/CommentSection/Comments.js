@@ -99,9 +99,7 @@ class Comments extends Component{
                 <button className="button">cmnt</button>
                 <p>{this.props.thePosts.likes} likes</p>
             </div>
-            <div className="date">
-            <p>{this.props.thePosts.timestamp}</p>
-            </div>
+
                 {this.state.thePosts.map(each => {
                     return (
                     <div>
@@ -111,7 +109,9 @@ class Comments extends Component{
                         />
                     </div>
                 )})}
-                
+                            <div className="date">
+            <p>{this.props.thePosts.timestamp}</p>
+            </div>
                 <form className="comm-form" onSubmit={this.addNewComment}>
                     <input
                         type= "text" 

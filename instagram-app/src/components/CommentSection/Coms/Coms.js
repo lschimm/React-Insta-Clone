@@ -4,10 +4,10 @@ import React from 'react';
 const Coms = props => {
     return (
         <div className="user">
-            <p>
+            <p className="usernames">
             {props.comm.username}
             </p>
-            <p>
+            <p className="comment-text">
             {props.comm.text}
             </p>
             {/* props.thePosts.comments && props.thePosts.username.map(e => <p>{e.username}</p> */}
