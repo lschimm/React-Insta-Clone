@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Coms from './Coms/Coms';
-import { FaReact } from 'react-icons/fa'
 
+import styled from 'styled-components'
 import './Comments.css';
 
 
@@ -64,9 +64,11 @@ class Comments extends Component{
         });
     }
     
+
+
     render(){
         return(
-            <div className="comments">
+            <div className="CommentsStyles">
             <div className="userAnd">
                 <img src={this.props.thePosts.thumbnailUrl} 
                 className="thumbnail" />

@@ -24,11 +24,13 @@ export default class SearchBar extends React.Component {
         isOpen: false
       };
     }
+
     toggle() {
       this.setState({
         isOpen: !this.state.isOpen
       });
     }
+
     render() {
       return (
         <div>
@@ -36,10 +38,14 @@ export default class SearchBar extends React.Component {
             <NavbarBrand href="/">Cam | Instaclone</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-            <input className="input"
+            <input 
+                className="input"
                 type="text"
                 name="task"
                 placeholder="Search"
+                value= {this.props.newSearch}
+                onChange={this.props.changeHandler}
+                onSubmit={this.props.searchFilter}
               />
               <Nav className="ml-auto" navbar>
 
