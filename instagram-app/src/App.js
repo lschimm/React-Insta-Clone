@@ -3,10 +3,18 @@ import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
 import Posts from './components/PostContainer/Posts';
 import withAuthenticate from './components/Login/withAuthenticate';
+import styled from 'styled-components';
 
-import styled from 'styled-components'
 import './App.css';
 
+
+const Button = styled.button``
+
+  const AppDiv = styled.div`
+    text-align: center;
+    max-width: 642px;
+    margin: auto;
+  `;
 
 class App extends Component {
   constructor() {
@@ -40,24 +48,23 @@ class App extends Component {
     this.setState({filteredPosts: filtered})
   }
 
-  const 
-  
+
   render(){
     return (
-        <div className="App">
+        <AppDiv>
           <SearchBar 
             changeHandler={this.changeHandler}
             newSearch={this.state.search} 
             searchFilter={this.searchFilter}
             />
-          
           <Posts 
           thePosts= {this.state.data}
           searchFilter={this.searchFilter}
           filteredPosts={this.state.filteredPosts}
           />
           <withAuthenticate />
-        </div>
+          <h1>-----</h1>
+        </AppDiv>
     )
   }
 }

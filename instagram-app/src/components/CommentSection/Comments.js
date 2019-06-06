@@ -6,6 +6,28 @@ import './Comments.css';
 
 
 
+const CommentsStyles = styled.div`
+    max-width: 675px;
+    margin: auto;
+`
+
+const UserAnd = styled.div`
+    display: flex;
+    padding: 2%;
+`
+
+const Likes = styled.div`
+    text-align: left;
+    margin-left: 8px;
+`
+
+const Date = styled.div`
+    text-align: left;
+    margin-left: 8px;
+    font-size: 85%;
+`
+
+
 class Comments extends Component{
     constructor(props) {
         super();
@@ -19,7 +41,6 @@ class Comments extends Component{
             likes: 0
         }
     }
-    
     
     addNewComment = (event, index) => {
         event.preventDefault();
@@ -63,27 +84,21 @@ class Comments extends Component{
             [event.target.name]: event.target.value
         });
     }
-    
-
 
     render(){
         return(
-            <div className="CommentsStyles">
-            <div className="userAnd">
+            <CommentsStyles>
+            <UserAnd>
                 <img src={this.props.thePosts.thumbnailUrl} 
                 className="thumbnail" />
                 <h5 className="username">{this.props.thePosts.username}</h5>
-            </div>
+            </UserAnd>
             <img src={this.props.thePosts.imageUrl} />
-            <div className="likes">
-
+            <Likes>
                 <button className="button" onClick={this.addNewLike}>like</button>
-
-
                 <button className="button">cmnt</button>
                 <p>{this.state.theLikes} likes</p>
-            </div>
-
+            </Likes>
                 {this.state.thePosts.map(each => {
                     return (
                         <div>
@@ -93,9 +108,9 @@ class Comments extends Component{
                             />
                     </div>
                 )})}
-                            <div className="date">
+            <Date>
             <p>{this.props.thePosts.timestamp}</p>
-            </div>
+            </Date>
                 <form className="comm-form" onSubmit={this.addNewComment}>
                     <input
                         type= "text" 
@@ -105,7 +120,7 @@ class Comments extends Component{
                         onChange={this.changeHandler}
                         />
                 </form>
-        </div>
+        </CommentsStyles>
         )
     }
 } 
